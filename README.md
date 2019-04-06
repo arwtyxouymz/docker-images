@@ -1,7 +1,7 @@
 # Docker ROS GUI
 
 This is docker images for ROS with Nvidia GPU and nvidia-docker2.
-I support only `kinetic` and `indigo` because `melodic` is presupported by [osrf/ros](https://hub.docker.com/r/osrf/ros).
+I support only `kinetic` and `indigo` because `melodic` is already supported by [osrf/ros](https://hub.docker.com/r/osrf/ros).
 
 
 ## Installation
@@ -21,7 +21,7 @@ $ docker build ./<rosdistro> -t <your image name>
 
 ### X server control
 
-You need change your X server control.
+You need to change your X server control.
 ```
 $ xhost +
 ```
