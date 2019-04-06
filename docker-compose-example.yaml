@@ -1,0 +1,25 @@
+version: '2.3'
+
+services:
+  master:
+    build: kinetic
+    container_name: master
+    ports:
+      - "11311:11311"
+    command: roscore
+
+  rviz:
+    build: kinetic
+    container_name: rviz
+    runtime: nvidia
+    privileged: true
+    environment:
+      - "ROS_HOSTNAME=rviz"
+      - "ROS_MASTER_URI=http://master:11311"
+      - "DISPLAY=${DISPLAY}"
+      - "QT_X11_NO_MITSHM=1"
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+    command: rosrun rviz rviz
+    depends_on:
+      - master
