@@ -1,21 +1,13 @@
-# Docker ROS GUI
+# Docker ROS
 
-This is docker images for ROS with Nvidia GPU and nvidia-docker2.
-I support only `kinetic` and `indigo` because `melodic` is already supported by [osrf/ros](https://hub.docker.com/r/osrf/ros).
+This is docker images for ROS and dev environment.
 
 
 ## Installation
 
-If you want to use prebuild image,
+You can use prebuild docker image from docker-hub,
 ```bash
-$ docker pull arwtyxouymz/ros:<rosdistro>-gui
-```
-
-Or, you can build by yourself.
-```bash
-$ git clone https://github.com/arwtyxouymz/docker-ros-gui.git
-$ cd docker-ros-gui
-$ docker build ./<rosdistro> -t <your image name>
+$ docker pull arwtyxouymz/ros:<tags>
 ```
 ## Usage
 
