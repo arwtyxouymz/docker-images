@@ -3,14 +3,19 @@ FROM ubuntu:14.04
 # General packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    fonts-powerline \
     git \
     locales \
     software-properties-common \
     tmux \
     xsel \
     wget \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf \
+    && wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf \
+    && mkdir ~/.fonts/ \
+    && mv PowerlineSymbols.otf ~/.fonts/ \
+    && mkdir -p .config/fontconfig/conf.d \
+    && fc-cache -vf ~/.fonts/
     
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8  
